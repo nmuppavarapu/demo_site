@@ -2,29 +2,31 @@ require 'spec_helper'
 
 describe "Pages" do
    
+   base_title = "Ruby on Rails Tutorial Demo App"
+   
    describe "Home Page" do
       
       it "should have the content 'Sample App'" do
-         visit '/pages/home'
+         visit '/'
          page.should have_content("Sample App")
       end
       
       it "should have page title 'Home'" do
-         visit '/pages/home'
-         page.should have_selector('title', :text => "Ruby on Rails Tutorial Demo App | Home")
+         visit '/'
+         page.should have_selector('title', :text => "#{base_title} | #{@title}")
       end
    end
    
    describe "Help Page" do
       
       it "should have the content 'Help Page'" do
-         visit '/pages/help'
+         visit '/help'
          page.should have_content("Help Page")
       end
       
       it "should have page title 'Help'" do
-         visit '/pages/help'
-         page.should have_selector('title', :text => "Ruby on Rails Tutorial Demo App | Help")
+         visit '/help'
+         page.should have_selector('title', :text => "#{base_title} | #{@title}")
       end
    
    end
@@ -32,13 +34,13 @@ describe "Pages" do
    describe "About Page" do
       
       it "should have the content 'About Us'" do
-         visit '/pages/about'
+         visit '/about'
          page.should have_content("About Us")
       end
       
       it "should have page title 'About Us'" do
-         visit '/pages/about'
-         page.should have_selector('title', :text => "Ruby on Rails Tutorial Demo App | About Us")
+         visit '/about'
+         page.should have_selector('title', :text => "#{base_title} | #{@title}")
       end
    
    end
@@ -46,13 +48,13 @@ describe "Pages" do
    describe "Contact Page" do
       
       it "should have the content 'Contact'" do
-         visit '/pages/contact'
+         visit '/contact'
          page.should have_content("Contact")
       end
       
       it "should have page title 'Contact'" do
-         visit '/pages/contact'
-         page.should have_selector('title', :text => "Ruby on Rails Tutorial Demo App | Contact")
+         visit '/contact'
+         page.should have_selector('title', :text => "#{base_title} | #{@title}")
       end
    
    end   
